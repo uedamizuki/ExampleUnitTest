@@ -1,10 +1,12 @@
 package jp.ac.uryukyu.ie.e185719;
 
+import jdk.jfr.DataAmount;
+
 public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack;
-    boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     public LivingThing(String name, int hitPoint, int attack){
         this.name = name;
@@ -18,8 +20,25 @@ public class LivingThing {
         return dead;
     }
 
+    public void setDead(boolean dead){
+        this.dead = dead;
+    }
+
     public String getName(){
         return name;
+    }
+
+
+    public int getHitPoint(){
+        return hitPoint;
+    }
+
+    public void setHitPoint(int damage){
+        this.hitPoint -= damage;
+    }
+
+    public int getAttack(){
+        return attack;
     }
 
     public void attack(LivingThing opponent) {
